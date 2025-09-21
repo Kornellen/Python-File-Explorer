@@ -23,7 +23,7 @@ def getFiles(
     indent = "  " * depth
     for item in path.iterdir():
         if item.is_dir() and item.name not in ignored_dirs:
-            node = window.AddComponent(parent, f"{indent}📁 {item.name}/")
+            node = window.InsertTreeViewNode(parent, f"{indent}📁 {item.name}/")
             (
                 print(
                     f"{Colors.dir_color}{indent}📁 {item.name}/{Colors.default_color}"
@@ -42,4 +42,4 @@ def getFiles(
                 if is_logging_on
                 else ""
             )
-            window.AddComponent(parent, f"{indent}{icon} {item.name}{is_dir}")
+            window.InsertTreeViewNode(parent, f"{indent}{icon} {item.name}{is_dir}")

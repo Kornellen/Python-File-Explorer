@@ -11,7 +11,7 @@ def main() -> None:
         if env_path:
             path = Path(env_path)
 
-            root_tree = window.tree.insert("", "end", text=f"{path}", open=True)
+            root_tree = window.tree.insert("", "end", text=f"📁 {path}", open=True)
 
             getFiles(window.tree, root_tree, path, window, is_logging_on=False)
             window.Run()
